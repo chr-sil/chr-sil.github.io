@@ -24,6 +24,15 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
     onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
   {%- endif %}
+  {%- if page and page.extra.mermaid %}
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true, theme: "base", themeVariables: {
+      fontFamily: "iA Quattro, ui-monospace, monospace", fontSize: "13px",
+      primaryColor: "#f0ede4", primaryBorderColor: "#7a776c", primaryTextColor: "#26251f",
+      lineColor: "#7a776c", clusterBkg: "#faf8f3", clusterBorder: "#e6e2d6" } });
+  </script>
+  {%- endif %}
 </head>
 <body>
   <header class="site-header">
