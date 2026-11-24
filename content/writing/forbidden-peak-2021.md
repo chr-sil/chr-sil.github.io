@@ -2,9 +2,11 @@
 title = "Forbidden Peak"
 date = 2021-08-04
 description = "A plan for the NW Face, a retreat from Shark Fin Col, and the West Ridge instead. North Cascades, August 2021."
+aliases = ["/mountains/forbidden-peak-2021/"]
 [extra]
 lang = "en"
 location = "Forbidden Peak, North Cascades, Washington"
+published_in = "DAV Berggeher, Sektion Karlsbad"
 +++
 
 Portland, OR, August 2021. Alpine Climbing Season here in the Pacific Northwest. It's been an awfully hot summer. I learn a new word: Heat Dome. Could have done without that one. Retreating up high into the mountains, with green alpine meadows, gurgling creeks, seracs falling somewhere in the distance - that sounds better. So, despite busy schedules, Lindsey and I clear out our calendars for some alpine adventuring again. I have been dreaming about seeing the Northern Cascades for some time, having read some stunning climbing reports. It looks incredible up there. Browsing through guide books and trip reports online increases my excitement, but does not yield any specific destinations. But Lindsey comes through, suggesting a few alternatives, and we ultimately settle for the lofty goal of attempting the Northwest Face of the Forbidden Peak–an impressive feat of alpine climbing, first climbed by Fred Beckey and Ed Cooper in 1959. Browsing through trip reports (all praising the incredible piece of alpine climbing that is the NW Face of Forbidden), it emerges that the crux of the climb would be how to get to the climb. Our research yields two alternative approaches to the base of the climb. From Boston Basin, the proposed base camp location, the obvious (but unpopular) option seems to be climb up to the West Ridge, rappel down on the Forbidden Glacier, traverse to the climb. The "clockwise" way. The more scenic (and objectively safer) way would be a counterclockwise circumnavigation of the mountain: Leave Boston Basin, head east toward the Shark Fin Col, extending the East Ridge of forbidden. The rap down from the col to Forbidden glacier seems to be the crux. Traverse the Boston Glacier, cross the North Ridge, traverse Forbidden Glacier to the base of the climb. Long. Scenic. Perfect. The plan is made.

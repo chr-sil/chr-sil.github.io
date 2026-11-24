@@ -2,6 +2,7 @@
 title = "Double Crown am Lone Peak"
 date = 2024-09-01
 description = "Triple Overhangs und Vertical Smile in einem Aufwasch: alpiner Granit über dem Salt Lake Valley."
+aliases = ["/mountains/lone-peak-double-crown-2024/"]
 [extra]
 lang = "de"
 location = "Lone Peak, Wasatch Range, Utah"

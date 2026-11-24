@@ -2,6 +2,7 @@
 title = "Von Träumen und Rückschlägen: Eine Expedition ins Himalaya"
 date = 2025-10-14
 description = "Ama Dablam (6812 m), Khumbu, Nepal. Fünf Bergsteiger, ein Lungenödem, drei am Gipfel."
+aliases = ["/mountains/ama-dablam-2025/"]
 [extra]
 lang = "de"
 location = "Ama Dablam, Khumbu, Nepal"

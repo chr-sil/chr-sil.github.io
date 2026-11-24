@@ -6,7 +6,7 @@
     <p class="title">{{ cv.basics.title }}</p>
     <p class="tagline">{{ cv.basics.tagline }}</p>
     {%- if cv.basics.stack %}
-    <ul class="tags stack"><li class="label">stack:</li>{% for t in cv.basics.stack %}<li>{{ t }}</li>{% endfor %}</ul>
+    <ul class="tags stack"><li class="label">on:</li>{% for t in cv.basics.stack %}<li>{{ t }}</li>{% endfor %}</ul>
     {%- endif %}
     {{ <contacts b={cv.basics} /> }}
   </div>

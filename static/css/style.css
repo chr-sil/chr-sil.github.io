@@ -120,6 +120,8 @@ img { max-width: 100%; height: auto; }
 .tags li + li::before { content: "·"; padding: 0 0.5em; color: var(--rule); }
 .tags li.label + li::before { content: ""; padding: 0 0.25em; }
 .tags.stack { margin-top: 0.35rem; }
+.tags.stack li + li::before { content: "|"; color: var(--muted); }
+.tags.stack li.label + li::before { content: ""; }
 .tags .label { color: var(--fg); }
 
 /* ---------- CV ---------- */
