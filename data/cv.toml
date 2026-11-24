@@ -1,0 +1,224 @@
+# Single source of truth for the CV.
+# Rendered to HTML by Zola (templates/cv.html) and later to PDF by Typst.
+# Dates: "YYYY-MM" or "present".
+
+[basics]
+name = "Christopher Siller"
+title = "Machine Learning Researcher & Engineer"
+tagline = "Graph Neural Networks, Deep Learning, Simulation & Forecasting"
+# location = ""
+# email = ""
+# github = "chr-sil"
+# linkedin = ""
+# scholar = ""
+
+focus = [
+  "Simulation & Digital Twins",
+  "Time Series Forecasting, Anomaly Detection",
+  "Graph Neural Networks, Neural Networks, Gradient Boosting",
+  "Statistical Modeling, Causality, Monte Carlo Simulation",
+  "Data Pipelines (ETL/ELT), Data Quality, Data Exploration",
+  "Graph Databases, Vector Databases",
+  "MLOps, Scalable Deployment, API Modeling",
+  "Infrastructure as Code, Containerization, Orchestration",
+]
+
+[[education]]
+degree = "M.Sc. Mechanical & Software Engineering"
+institution = "Friedrich-Alexander-Universität Erlangen-Nürnberg"
+# start = ""
+# end = ""
+# thesis = ""
+
+[[languages]]
+name = "German"
+level = "Native"
+
+[[languages]]
+name = "English"
+level = "Fluent (C2)"
+
+[[languages]]
+name = "French"
+level = "Basic (A2)"
+
+# ---------------------------------------------------------------------------
+# Experience (newest first)
+# ---------------------------------------------------------------------------
+
+[[experience]]
+organization = "Alexander Thamm Austria GmbH"
+role = "Principal ML Engineer"
+start = "2026-06"
+end = "present"
+
+[[experience]]
+organization = "Alexander Thamm Austria GmbH"
+role = "Senior Machine Learning Engineer"
+start = "2024-04"
+end = "2026-06"
+
+[[experience]]
+organization = "Ferchau Austria GmbH"
+role = "Software & Data Engineer"
+start = "2022-04"
+end = "2024-03"
+
+[[experience]]
+organization = "Hatch Ltd."
+location = "USA"
+role = "Integrated Systems & Data Engineer"
+start = "2018-10"
+end = "2021-10"
+
+[[experience]]
+organization = "Siemens Transmission Solutions"
+role = "R&D Working Student"
+start = "2015-11"
+end = "2017-12"
+
+# ---------------------------------------------------------------------------
+# Skills
+# ---------------------------------------------------------------------------
+
+[[skills]]
+category = "Software Engineering"
+items = ["Bash", "Python", "Rust", "C++", "API Design", "Clean Architecture", "Data Contracts", "pytest", "Ruff", "mypy", "uv"]
+
+[[skills]]
+category = "Data Science & ML"
+items = [
+  "Forecasting", "mlforecast", "Monte Carlo Simulation", "statsmodels", "Regression",
+  "Weibull Analysis", "Fourier Analysis", "Thermodynamic Modeling", "Gradient Boosting",
+  "LightGBM", "scikit-learn", "Anomaly Detection", "Isolation Forest", "Predictive Maintenance",
+  "Reinforcement Learning", "Optuna", "SHAP", "PyTorch", "PyTorch Geometric",
+  "Graph Neural Networks", "Equivariant GNNs (PaiNN)", "RDKit", "RAG", "Knowledge Management",
+  "Agent Orchestration", "Agent Guardrailing", "Agent Skills", "MCP", "scipy.optimize", "Chronos",
+]
+
+[[skills]]
+category = "Data Platform & Cloud"
+items = [
+  "Databricks", "Unity Catalog", "Databricks Asset Bundles", "Delta Sharing", "MLflow",
+  "Microsoft Azure", "AWS", "Open Telekom Cloud", "Exoscale", "SAP Datasphere", "Dataiku",
+  "Synapse", "Data Factory",
+]
+
+[[skills]]
+category = "Databases"
+items = ["PostgreSQL", "Microsoft SQL Server", "ClickHouse", "Apache Iceberg", "Lakekeeper", "Apache Polaris", "MinIO", "S3 Object Storage", "Neo4j"]
+
+[[skills]]
+category = "Data Engineering"
+items = ["Spark", "PySpark", "SQL", "pandas", "Polars", "ELT/ETL", "Medallion Architecture", "Delta Lake", "Data Quality Checks"]
+
+[[skills]]
+category = "Data Visualization"
+items = ["Power BI", "Plotly", "Matplotlib", "Tableau"]
+
+[[skills]]
+category = "DevOps"
+items = ["Terraform", "Kubernetes", "Helm", "GitHub Actions (CI/CD)", "Azure DevOps", "pre-commit"]
+
+[[skills]]
+category = "Tools"
+items = ["Git", "Docker", "Dev Containers", "Jupyter", "JupyterHub", "VS Code", "vim", "tmux", "Claude Code", "OpenCode", "Databricks CLI", "kubectl", "Make", "Jira"]
+
+[[skills]]
+category = "Consulting"
+items = ["Workshops", "ML & Data Science Trainings", "Data Engineering Trainings"]
+
+[[skills]]
+category = "Project Management"
+items = ["Scrum", "SAFe", "OKR", "Jira", "Technical Project Lead"]
+
+# ---------------------------------------------------------------------------
+# Reference projects (newest first)
+# `client` = who the work was for, `employer` = who you were employed by.
+# ---------------------------------------------------------------------------
+
+[[projects]]
+role = "Data Architect"
+client = "Interdisciplinary Transformation University Linz"
+employer = "Alexander Thamm Austria GmbH"
+start = "2026-02"
+end = "present"
+industry = "Education & Research"
+goal = "Independent European data lakehouse on sovereign cloud infrastructure."
+description = """
+Designed and built an open-source data lakehouse for an Austrian university. \
+Deployed the core components on Kubernetes: Apache Iceberg with Lakekeeper as catalog, \
+Spark, JupyterHub, PostgreSQL. Set up medallion layers on S3-compatible object storage. \
+Implemented the entire infrastructure as code with Terraform and Helm. Migrated the \
+platform from Exoscale to Open Telekom Cloud, including a provider comparison as the \
+basis for the decision. Developed the security concept; led code reviews and technical direction.\
+"""
+tech = ["Terraform", "Kubernetes", "Helm", "Apache Iceberg", "Lakekeeper", "Apache Polaris", "Spark", "JupyterHub", "PostgreSQL", "MinIO", "OpenFGA", "Traefik", "Exoscale", "Open Telekom Cloud", "Python", "Bash"]
+
+[[projects]]
+role = "Data Scientist"
+client = "Porsche AG"
+employer = "Alexander Thamm Austria GmbH"
+start = "2025-05"
+end = "present"
+industry = "Automotive"
+goal = "Profitability analysis of options and option packages (cost, revenue, volume, profit) with the Porsche Option Economics Toolbox (POET)."
+description = """
+Extended the Porsche Option Economics Toolbox. Migrated the calculation logic for cost, \
+revenue, take rates and tariffs from Dataiku to Databricks and verified it against the \
+legacy system. Refactored pipelines into modular, tested components with data contracts. \
+Built automated data quality checks and flow monitoring. Implemented API integrations with \
+source systems and SAP Datasphere, including writeback via Delta Sharing. Developed anomaly \
+detection on the input data. Automated deployments via Databricks Asset Bundles and CI/CD.\
+"""
+tech = ["Python", "PySpark", "SQL", "Databricks", "Unity Catalog", "Databricks Asset Bundles", "Delta Sharing", "Dataiku", "SAP Datasphere", "Data Contracts", "Data Quality Checks", "Isolation Forest", "pytest", "GitHub Actions", "SAFe"]
+
+[[projects]]
+role = "Data Scientist"
+client = "GEA Ltd."
+employer = "Alexander Thamm Austria GmbH"
+start = "2024-09"
+end = "2025-04"
+industry = "Energy"
+goal = "Reduce the energy consumption of industrial refrigeration plants through data-driven optimization of plant control."
+description = """
+Developed an AI digital twin for compressors and condensers from IoT sensor and weather data. \
+Modeled plant behavior with statistical models. Forecast efficiency (COP) and energy \
+consumption from weather forecasts and cooling load. Optimized setpoints such as condensing \
+pressure and fan speed via a forecast-driven cost function. Measured savings against a \
+baseline: 5–10 % lower energy consumption. Automated data quality checks, model training and \
+setpoint writeback. Rolled out to further plants worldwide.\
+"""
+tech = ["Python", "Databricks", "MLflow", "Azure", "Azure IoT Hub", "statsmodels", "scikit-learn", "Regression", "Time Series Forecasting", "Optimization", "Digital Twin", "Dev Containers"]
+
+[[projects]]
+role = "Data Scientist"
+client = "INNIO Group"
+employer = "Ferchau Austria GmbH"
+start = "2022-04"
+end = "2024-03"
+industry = "Energy"
+goal = "Predictive maintenance platform for a global fleet of gas engines in power generation."
+description = """
+Developed and productionized statistical lifetime models (Weibull) and time series models \
+(RNN) on sensor data. Quantified failure probabilities and uncertainty via Monte Carlo \
+simulation. Built data pipelines with Prefect, Dask and ClickHouse on AWS. Implemented \
+interactive dashboards with Plotly Dash. End-to-end ownership from pipeline to model.\
+"""
+tech = ["Python", "Monte Carlo", "Weibull", "RNN", "pandas", "NumPy", "Dask", "Prefect", "ClickHouse", "AWS", "Docker", "Kubernetes", "Plotly", "Dash"]
+
+[[projects]]
+role = "Integrated Systems & Data Engineer"
+client = "Hatch"
+employer = "Hatch Ltd."
+start = "2018-10"
+end = "2021-10"
+industry = "Transport"
+goal = "Simulation-based optimization of operations and electrical design of public transit systems."
+description = """
+Developed and applied TrainOps©, Hatch's proprietary operations and network simulation \
+software: feature implementation, beta testing and use in real client projects. Collected \
+and prepared field data to build simulation scenarios. Post-processed and analyzed \
+simulation results; developed new evaluation methods and introduced new tools for large datasets.\
+"""
+tech = ["C++", "Python", "MATLAB", "TrainOps©", "Simulation", "Scenario Analysis"]

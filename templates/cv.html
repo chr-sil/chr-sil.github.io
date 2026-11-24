@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="page-header cv-header">
+  <div>
+    <h1>{{ cv.basics.name }}</h1>
+    <p class="title">{{ cv.basics.title }}</p>
+    <p class="tagline">{{ cv.basics.tagline }}</p>
+  </div>
+  {%- if page.extra.pdf %}
+  <a class="button" href="{{ get_url(path=page.extra.pdf) }}">PDF ↓</a>
+  {%- endif %}
+</header>
+
+{%- if page.content %}<div class="prose">{{ page.content | safe }}</div>{% endif %}
+
+<section>
+  <h2>Experience</h2>
+  <ul class="entries">
+    {%- for e in cv.experience %}
+    <li>
+      <div class="when">{{ <daterange start={e.start} end={e.end} /> }}</div>
+      <div>
+        <strong>{{ e.role }}</strong>
+        <div class="muted">{{ e.organization }}{% if e.location %}, {{ e.location }}{% endif %}</div>
+      </div>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2>Selected Projects</h2>
+  <ul class="entries">
+    {%- for p in cv.projects %}
+    <li>
+      <div class="when">{{ <daterange start={p.start} end={p.end} /> }}</div>
+      <div>
+        <strong>{{ p.role }}</strong> · {{ p.client }}
+        <div class="muted">{{ p.industry }}{% if p.employer and p.employer != p.client %} · via {{ p.employer }}{% endif %}</div>
+        <p class="goal">{{ p.goal }}</p>
+        <p>{{ p.description }}</p>
+        <ul class="tags">{% for t in p.tech %}<li>{{ t }}</li>{% endfor %}</ul>
+      </div>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <ul class="entries">
+    {%- for ed in cv.education %}
+    <li>
+      <div class="when">{% if ed.start %}{{ <daterange start={ed.start} end={ed.end} /> }}{% endif %}</div>
+      <div>
+        <strong>{{ ed.degree }}</strong>
+        <div class="muted">{{ ed.institution }}</div>
+        {%- if ed.thesis %}<p>Thesis: {{ ed.thesis }}</p>{% endif %}
+      </div>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2>Focus Areas</h2>
+  <ul class="plain">
+    {%- for f in cv.basics.focus %}<li>{{ f }}</li>{% endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <dl class="skills">
+    {%- for s in cv.skills %}
+    <dt>{{ s.category }}</dt>
+    <dd>{{ s.items | join(sep=", ") }}</dd>
+    {%- endfor %}
+  </dl>
+</section>
+
+<section>
+  <h2>Languages</h2>
+  <dl class="skills">
+    {%- for l in cv.languages %}
+    <dt>{{ l.name }}</dt>
+    <dd>{{ l.level }}</dd>
+    {%- endfor %}
+  </dl>
+</section>
+{% endblock content %}

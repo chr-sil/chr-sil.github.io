@@ -1,0 +1,49 @@
+{%- set cv = load_data(path="data/cv.toml") -%}
+<!doctype html>
+<html lang="{{ config.default_language }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- block meta %}
+  {%- set page_title = config.title -%}
+  {%- if page and page.title %}{% set page_title = page.title ~ " · " ~ config.title %}
+  {%- elif section and section.title and not section.path == "/" %}{% set page_title = section.title ~ " · " ~ config.title %}{% endif %}
+  <title>{{ page_title }}</title>
+  {%- set desc = config.description -%}
+  {%- if page and page.description %}{% set desc = page.description %}{% elif section and section.description %}{% set desc = section.description %}{% endif %}
+  <meta name="description" content="{{ desc }}">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ desc }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ current_url | default(value=config.base_url) }}">
+  {%- endblock meta %}
+  <link rel="stylesheet" href="{{ get_url(path='css/style.css', cachebust=true) }}">
+  {%- if page and page.extra.math %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+  {%- endif %}
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="{{ config.base_url }}/">{{ cv.basics.name }}</a>
+    <nav>
+      {%- for item in config.extra.nav %}
+      <a href="{{ get_url(path=item.path) }}"{% if current_path is starting_with(pat=item.path) %} aria-current="page"{% endif %}>{{ item.name }}</a>
+      {%- endfor %}
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock content %}
+  </main>
+
+  <footer class="site-footer">
+    <span>© {{ now() | date(format="%Y") }} {{ cv.basics.name }}</span>
+    {%- if cv.basics.github %} · <a href="https://github.com/{{ cv.basics.github }}">GitHub</a>{% endif %}
+    {%- if cv.basics.linkedin %} · <a href="{{ cv.basics.linkedin }}">LinkedIn</a>{% endif %}
+    {%- if cv.basics.scholar %} · <a href="{{ cv.basics.scholar }}">Scholar</a>{% endif %}
+  </footer>
+</body>
+</html>

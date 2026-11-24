@@ -1,0 +1,32 @@
+{#- "2024-04" -> "Apr 2024", "present" -> "present" -#}
+{%- component ym(d: string) -%}
+{%- if d == "present" -%}present
+{%- else -%}
+{%- set months = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] -%}
+{%- set parts = d | split(pat="-") -%}
+{{ months[parts[1] | int] }} {{ parts[0] }}
+{%- endif -%}
+{%- endcomponent ym -%}
+
+{%- component daterange(start: string, end: string) -%}
+{{ <ym d={start} /> }} – {{ <ym d={end} /> }}
+{%- endcomponent daterange -%}
+
+{%- component page_list(pages) -%}
+{%- if pages | length == 0 -%}
+<p class="muted">Nothing here yet.</p>
+{%- else -%}
+<ul class="entries">
+  {%- for p in pages %}
+  <li>
+    <div class="when">{% if p.date %}{{ p.date | date(format="%b %Y") }}{% endif %}</div>
+    <div>
+      <a class="entry-title" href="{{ p.permalink }}">{{ p.title }}</a>
+      {%- if p.description %}<p>{{ p.description }}</p>{% endif %}
+      {%- if p.extra.tags %}<ul class="tags">{% for t in p.extra.tags %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
+    </div>
+  </li>
+  {%- endfor %}
+</ul>
+{%- endif -%}
+{%- endcomponent page_list -%}

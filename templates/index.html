@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <h1>{{ cv.basics.name }}</h1>
+  <p class="title">{{ cv.basics.title }}</p>
+  <p class="tagline">{{ cv.basics.tagline }}</p>
+</section>
+
+<div class="prose">
+  {{ section.content | safe }}
+</div>
+
+<ul class="jump">
+  {%- for item in config.extra.nav %}
+  <li><a href="{{ get_url(path=item.path) }}">{{ item.name }} →</a></li>
+  {%- endfor %}
+</ul>
+{% endblock content %}
