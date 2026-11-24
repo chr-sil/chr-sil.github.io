@@ -4,7 +4,7 @@
 
 [basics]
 name = "Christopher Siller"
-title = "ML Research & ML Engineering"
+title = "Machine Learning Research & Engineering"
 tagline = "Deep Learning | Graph ML | Data Science | Data Engineering"
 photo = "img/me.jpg"
 # Short personal stack, shown under the tagline. Lowercase on purpose.
