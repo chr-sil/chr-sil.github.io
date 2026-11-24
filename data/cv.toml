@@ -10,9 +10,10 @@ photo = "img/me.jpg"
 # Short personal stack, shown under the tagline. Lowercase on purpose.
 stack = ["python", "rust", "pytorch", "nixos", "tmux", "vim"]
 # location = ""
-# email = ""
-# github = "chr-sil"
-# linkedin = ""
+github = "chr-sil"
+linkedin = "https://www.linkedin.com/in/christophersiller/"
+orcid = "0009-0004-9295-0130"
+email = "chris.siller@alumni.fau.de"
 # scholar = ""
 
 focus = [

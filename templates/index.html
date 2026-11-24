@@ -1,11 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="hero">
-  <h1>{{ cv.basics.name }}</h1>
-  <p class="title">{{ cv.basics.title }}</p>
-  <p class="tagline">{{ cv.basics.tagline }}</p>
-  {%- if cv.basics.stack %}
-  <ul class="tags stack"><li class="label">stack:</li>{% for t in cv.basics.stack %}<li>{{ t }}</li>{% endfor %}</ul>
+<section class="hero cv-header">
+  <div class="cv-id">
+    <h1>{{ cv.basics.name }}</h1>
+    <p class="title">{{ cv.basics.title }}</p>
+    <p class="tagline">{{ cv.basics.tagline }}</p>
+    {%- if cv.basics.stack %}
+    <ul class="tags stack"><li class="label">stack:</li>{% for t in cv.basics.stack %}<li>{{ t }}</li>{% endfor %}</ul>
+    {%- endif %}
+    {{ <contacts b={cv.basics} /> }}
+  </div>
+  {%- if cv.basics.photo %}
+  <div class="hex"><img src="{{ get_url(path=cv.basics.photo) }}" alt="Photo of {{ cv.basics.name }}" width="240" height="240"></div>
   {%- endif %}
 </section>
 

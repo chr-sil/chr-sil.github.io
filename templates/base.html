@@ -41,9 +41,7 @@
 
   <footer class="site-footer">
     <span>© {{ now() | date(format="%Y") }} {{ cv.basics.name }}</span>
-    {%- if cv.basics.github %} · <a href="https://github.com/{{ cv.basics.github }}">GitHub</a>{% endif %}
-    {%- if cv.basics.linkedin %} · <a href="{{ cv.basics.linkedin }}">LinkedIn</a>{% endif %}
-    {%- if cv.basics.scholar %} · <a href="{{ cv.basics.scholar }}">Scholar</a>{% endif %}
+    {{ <contacts b={cv.basics} labels={false} /> }}
   </footer>
 </body>
 </html>

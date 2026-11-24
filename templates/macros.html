@@ -52,3 +52,17 @@
 </ul>
 {%- endif -%}
 {%- endcomponent page_list -%}
+
+{#- Contact links with inline SVG icons (static/icons/*.svg, fill = currentColor) -#}
+{%- component contacts(b, labels: bool = true) -%}
+{%- set links = [] -%}
+{%- if b.github %}{% set links = [...links, {"icon": "github", "label": "github", "href": "https://github.com/" ~ b.github}] %}{% endif -%}
+{%- if b.linkedin %}{% set links = [...links, {"icon": "linkedin", "label": "linkedin", "href": b.linkedin}] %}{% endif -%}
+{%- if b.orcid %}{% set links = [...links, {"icon": "orcid", "label": "orcid", "href": "https://orcid.org/" ~ b.orcid}] %}{% endif -%}
+{%- if b.email %}{% set links = [...links, {"icon": "email", "label": "email", "href": "mailto:" ~ b.email}] %}{% endif -%}
+<ul class="contacts{% if not labels %} icons-only{% endif %}">
+  {%- for l in links %}
+  <li><a href="{{ l.href }}" aria-label="{{ l.label }}"{% if l.icon != "email" %} rel="me"{% endif %}>{{ load_data(path="static/icons/" ~ l.icon ~ ".svg", format="plain") | safe }}{% if labels %}<span>{{ l.label }}</span>{% endif %}</a></li>
+  {%- endfor %}
+</ul>
+{%- endcomponent contacts -%}
