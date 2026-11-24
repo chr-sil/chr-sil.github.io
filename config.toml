@@ -15,4 +15,5 @@ nav = [
   { name = "CV", path = "/cv/" },
   { name = "Projects", path = "/projects/" },
   { name = "Research", path = "/research/" },
+  { name = "Mountains", path = "/mountains/" },
 ]

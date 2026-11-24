@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<article>
+<article{% if page.extra.lang %} lang="{{ page.extra.lang }}"{% endif %}>
   <header class="page-header">
     <h1>{{ page.title }}</h1>
     {%- if page.extra.authors %}{{ <authors names={page.extra.authors} me={config.title} /> }}{% endif %}
     {{ <pubmeta extra={page.extra} /> }}
+    {%- if page.extra.location %}<p class="meta">{{ page.extra.location }}</p>{% endif %}
     {%- if page.date %}<p class="meta">{{ page.date | date(format="%B %Y") }}</p>{% endif %}
+    {%- if page.extra.published_in %}<p class="meta">Written for {{ page.extra.published_in }}</p>{% endif %}
     {%- if page.extra.tags %}<ul class="tags">{% for t in page.extra.tags %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
   </header>
   <div class="prose">

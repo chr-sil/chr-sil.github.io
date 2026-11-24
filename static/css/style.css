@@ -202,3 +202,7 @@ img { max-width: 100%; height: auto; }
 .contacts svg title { display: none; }
 .contacts.icons-only { margin: 0; gap: 0.9rem; }
 .contacts.icons-only svg { width: 1.1rem; height: 1.1rem; }
+
+/* ---------- articles ---------- */
+.lang { font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; color: var(--muted); border: 1px solid var(--rule); border-radius: 3px; padding: 0 0.3em; vertical-align: 0.15em; }
+.prose h3 { font-size: 1rem; margin-top: 2.25rem; }

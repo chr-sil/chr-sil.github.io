@@ -41,10 +41,10 @@
   <li>
     <div class="when">{% if p.date %}{{ p.date | date(format="%b %Y") }}{% endif %}</div>
     <div>
-      <a class="entry-title" href="{{ p.permalink }}">{{ p.title }}</a>
+      <a class="entry-title" href="{{ p.permalink }}"{% if p.extra.lang %} lang="{{ p.extra.lang }}"{% endif %}>{{ p.title }}</a>{% if p.extra.lang and p.extra.lang != "en" %} <span class="lang">{{ p.extra.lang }}</span>{% endif %}
       {%- if p.extra.authors %}{{ <authors names={p.extra.authors} me={me} /> }}{% endif %}
       {{ <pubmeta extra={p.extra} /> }}
-      {%- if p.description %}<p>{{ p.description }}</p>{% endif %}
+      {%- if p.description %}<p{% if p.extra.lang %} lang="{{ p.extra.lang }}"{% endif %}>{{ p.description }}</p>{% endif %}
       {%- if p.extra.tags %}<ul class="tags">{% for t in p.extra.tags %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
     </div>
   </li>
