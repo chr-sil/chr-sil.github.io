@@ -1,11 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 <header class="page-header cv-header">
-  <div>
+  <div class="cv-id">
     <h1>{{ cv.basics.name }}</h1>
     <p class="title">{{ cv.basics.title }}</p>
     <p class="tagline">{{ cv.basics.tagline }}</p>
+    {%- if cv.basics.stack %}
+    <ul class="tags stack"><li class="label">stack:</li>{% for t in cv.basics.stack %}<li>{{ t }}</li>{% endfor %}</ul>
+    {%- endif %}
   </div>
+  {%- if cv.basics.photo %}
+  <div class="hex"><img src="{{ get_url(path=cv.basics.photo) }}" alt="Photo of {{ cv.basics.name }}" width="240" height="240"></div>
+  {%- endif %}
   {%- if page.extra.pdf %}
   <a class="button" href="{{ get_url(path=page.extra.pdf) }}">PDF ↓</a>
   {%- endif %}
@@ -30,20 +36,18 @@
 
 <section>
   <h2>Selected Projects</h2>
-  <ul class="entries">
+  <ul class="entries compact">
     {%- for p in cv.projects %}
     <li>
       <div class="when">{{ <daterange start={p.start} end={p.end} /> }}</div>
       <div>
-        <strong>{{ p.role }}</strong> · {{ p.client }}
-        <div class="muted">{{ p.industry }}{% if p.employer and p.employer != p.client %} · via {{ p.employer }}{% endif %}</div>
-        <p class="goal">{{ p.goal }}</p>
-        <p>{{ p.description }}</p>
-        <ul class="tags">{% for t in p.tech %}<li>{{ t }}</li>{% endfor %}</ul>
+        <strong>{{ p.role }}</strong> <span class="muted">· {{ p.industry }}</span>
+        <p>{{ p.goal }}</p>
       </div>
     </li>
     {%- endfor %}
   </ul>
+  <p class="more"><a href="{{ get_url(path='/projects/') }}">Project details →</a></p>
 </section>
 
 <section>

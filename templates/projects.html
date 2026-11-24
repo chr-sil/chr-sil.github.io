@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ section.title }}</h1>
+{%- if section.content %}<div class="prose">{{ section.content | safe }}</div>{% endif %}
+
+{%- if section.pages | length > 0 %}
+<section>
+  <h2>Own Projects</h2>
+  {{ <page_list pages={section.pages} me={config.title} /> }}
+</section>
+{%- endif %}
+
+<section>
+  <h2>Industry Projects</h2>
+  <ul class="entries">
+    {%- for p in cv.projects %}
+    <li>
+      <div class="when">{{ <daterange start={p.start} end={p.end} /> }}</div>
+      <div>
+        <strong>{{ p.role }}</strong>{% if p.client %} · {{ p.client }}{% endif %}
+        <div class="muted">{{ p.industry }}{% if p.employer and p.employer != p.client %} · via {{ p.employer }}{% endif %}</div>
+        <p class="goal">{{ p.goal }}</p>
+        <p>{{ p.description }}</p>
+        <ul class="tags">{% for t in (p.stack if p.stack else p.tech[:5]) %}<li>{{ t }}</li>{% endfor %}</ul>
+      </div>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{% endblock content %}

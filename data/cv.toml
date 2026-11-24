@@ -4,8 +4,11 @@
 
 [basics]
 name = "Christopher Siller"
-title = "Machine Learning Researcher & Engineer"
-tagline = "Graph Neural Networks, Deep Learning, Simulation & Forecasting"
+title = "ML Research & ML Engineering"
+tagline = "Graph Neural Networks | Deep Learning | Simulation & Forecasting"
+photo = "img/me.jpg"
+# Short personal stack, shown under the tagline. Lowercase on purpose.
+stack = ["python", "rust", "pytorch", "nixos", "tmux", "vim"]
 # location = ""
 # email = ""
 # github = "chr-sil"
@@ -135,12 +138,14 @@ items = ["Scrum", "SAFe", "OKR", "Jira", "Technical Project Lead"]
 # ---------------------------------------------------------------------------
 # Reference projects (newest first)
 # `client` = who the work was for, `employer` = who you were employed by.
+# Company names are commented out so they do not appear on the public site.
+# `stack` = the short list shown on the site; `tech` = full list (kept for the PDF / later use).
 # ---------------------------------------------------------------------------
 
 [[projects]]
 role = "Data Architect"
-client = "Interdisciplinary Transformation University Linz"
-employer = "Alexander Thamm Austria GmbH"
+# client = "Interdisciplinary Transformation University Linz"
+# employer = "Alexander Thamm Austria GmbH"
 start = "2026-02"
 end = "present"
 industry = "Education & Research"
@@ -153,30 +158,34 @@ Implemented the entire infrastructure as code with Terraform and Helm. Migrated 
 platform from Exoscale to Open Telekom Cloud, including a provider comparison as the \
 basis for the decision. Developed the security concept; led code reviews and technical direction.\
 """
+stack = ["kubernetes", "terraform", "iceberg", "spark"]
 tech = ["Terraform", "Kubernetes", "Helm", "Apache Iceberg", "Lakekeeper", "Apache Polaris", "Spark", "JupyterHub", "PostgreSQL", "MinIO", "OpenFGA", "Traefik", "Exoscale", "Open Telekom Cloud", "Python", "Bash"]
 
 [[projects]]
 role = "Data Scientist"
-client = "Porsche AG"
-employer = "Alexander Thamm Austria GmbH"
+# client = "Porsche AG"
+# employer = "Alexander Thamm Austria GmbH"
 start = "2025-05"
 end = "present"
 industry = "Automotive"
-goal = "Profitability analysis of options and option packages (cost, revenue, volume, profit) with the Porsche Option Economics Toolbox (POET)."
+# goal = "Profitability analysis of options and option packages (cost, revenue, volume, profit) with the Porsche Option Economics Toolbox (POET)."
+goal = "Profitability analysis of vehicle options and option packages (cost, revenue, volume, profit)."
+# original first sentence: "Extended the Porsche Option Economics Toolbox."
 description = """
-Extended the Porsche Option Economics Toolbox. Migrated the calculation logic for cost, \
+Extended the client's option economics toolbox. Migrated the calculation logic for cost, \
 revenue, take rates and tariffs from Dataiku to Databricks and verified it against the \
 legacy system. Refactored pipelines into modular, tested components with data contracts. \
 Built automated data quality checks and flow monitoring. Implemented API integrations with \
 source systems and SAP Datasphere, including writeback via Delta Sharing. Developed anomaly \
 detection on the input data. Automated deployments via Databricks Asset Bundles and CI/CD.\
 """
+stack = ["pyspark", "databricks", "delta sharing", "data contracts"]
 tech = ["Python", "PySpark", "SQL", "Databricks", "Unity Catalog", "Databricks Asset Bundles", "Delta Sharing", "Dataiku", "SAP Datasphere", "Data Contracts", "Data Quality Checks", "Isolation Forest", "pytest", "GitHub Actions", "SAFe"]
 
 [[projects]]
 role = "Data Scientist"
-client = "GEA Ltd."
-employer = "Alexander Thamm Austria GmbH"
+# client = "GEA Ltd."
+# employer = "Alexander Thamm Austria GmbH"
 start = "2024-09"
 end = "2025-04"
 industry = "Energy"
@@ -189,12 +198,13 @@ pressure and fan speed via a forecast-driven cost function. Measured savings aga
 baseline: 5–10 % lower energy consumption. Automated data quality checks, model training and \
 setpoint writeback. Rolled out to further plants worldwide.\
 """
+stack = ["python", "statsmodels", "mlflow", "azure iot"]
 tech = ["Python", "Databricks", "MLflow", "Azure", "Azure IoT Hub", "statsmodels", "scikit-learn", "Regression", "Time Series Forecasting", "Optimization", "Digital Twin", "Dev Containers"]
 
 [[projects]]
 role = "Data Scientist"
-client = "INNIO Group"
-employer = "Ferchau Austria GmbH"
+# client = "INNIO Group"
+# employer = "Ferchau Austria GmbH"
 start = "2022-04"
 end = "2024-03"
 industry = "Energy"
@@ -205,20 +215,24 @@ Developed and productionized statistical lifetime models (Weibull) and time seri
 simulation. Built data pipelines with Prefect, Dask and ClickHouse on AWS. Implemented \
 interactive dashboards with Plotly Dash. End-to-end ownership from pipeline to model.\
 """
+stack = ["python", "weibull", "monte carlo", "prefect", "clickhouse"]
 tech = ["Python", "Monte Carlo", "Weibull", "RNN", "pandas", "NumPy", "Dask", "Prefect", "ClickHouse", "AWS", "Docker", "Kubernetes", "Plotly", "Dash"]
 
 [[projects]]
 role = "Integrated Systems & Data Engineer"
-client = "Hatch"
-employer = "Hatch Ltd."
+# client = "Hatch"
+# employer = "Hatch Ltd."
 start = "2018-10"
 end = "2021-10"
 industry = "Transport"
 goal = "Simulation-based optimization of operations and electrical design of public transit systems."
+# original: "Developed and applied TrainOps©, Hatch's proprietary ..."
 description = """
-Developed and applied TrainOps©, Hatch's proprietary operations and network simulation \
+Developed and applied the company's proprietary operations and network simulation \
 software: feature implementation, beta testing and use in real client projects. Collected \
 and prepared field data to build simulation scenarios. Post-processed and analyzed \
 simulation results; developed new evaluation methods and introduced new tools for large datasets.\
 """
-tech = ["C++", "Python", "MATLAB", "TrainOps©", "Simulation", "Scenario Analysis"]
+# tech = ["C++", "Python", "MATLAB", "TrainOps©", "Simulation", "Scenario Analysis"]
+stack = ["c++", "python", "matlab"]
+tech = ["C++", "Python", "MATLAB", "Simulation", "Scenario Analysis"]

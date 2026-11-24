@@ -2,5 +2,5 @@
 {% block content %}
 <h1>{{ section.title }}</h1>
 {%- if section.content %}<div class="prose">{{ section.content | safe }}</div>{% endif %}
-{{ <page_list pages={section.pages} /> }}
+{{ <page_list pages={section.pages} me={config.title} /> }}
 {% endblock content %}

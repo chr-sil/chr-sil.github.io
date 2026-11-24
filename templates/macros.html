@@ -12,7 +12,27 @@
 {{ <ym d={start} /> }} – {{ <ym d={end} /> }}
 {%- endcomponent daterange -%}
 
-{%- component page_list(pages) -%}
+{#- Author list with `me` highlighted -#}
+{%- component authors(names, me: string) -%}
+<p class="authors">
+{%- for a in names -%}
+{%- if a == me %}<strong>{{ a }}</strong>{% else %}{{ a }}{% endif %}{% if not loop.last %}, {% endif %}
+{%- endfor -%}
+</p>
+{%- endcomponent authors -%}
+
+{#- venue · DOI link -#}
+{%- component pubmeta(extra) -%}
+{%- if extra.venue or extra.doi -%}
+<p class="meta">
+  {%- if extra.venue %}<em>{{ extra.venue }}</em>{% endif %}
+  {%- if extra.venue and extra.doi %} · {% endif %}
+  {%- if extra.doi %}<a href="https://doi.org/{{ extra.doi }}">doi:{{ extra.doi }}</a>{% endif %}
+</p>
+{%- endif -%}
+{%- endcomponent pubmeta -%}
+
+{%- component page_list(pages, me: string) -%}
 {%- if pages | length == 0 -%}
 <p class="muted">Nothing here yet.</p>
 {%- else -%}
@@ -22,6 +42,8 @@
     <div class="when">{% if p.date %}{{ p.date | date(format="%b %Y") }}{% endif %}</div>
     <div>
       <a class="entry-title" href="{{ p.permalink }}">{{ p.title }}</a>
+      {%- if p.extra.authors %}{{ <authors names={p.extra.authors} me={me} /> }}{% endif %}
+      {{ <pubmeta extra={p.extra} /> }}
       {%- if p.description %}<p>{{ p.description }}</p>{% endif %}
       {%- if p.extra.tags %}<ul class="tags">{% for t in p.extra.tags %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
     </div>
